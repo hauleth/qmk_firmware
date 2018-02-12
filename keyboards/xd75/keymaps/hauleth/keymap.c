@@ -25,8 +25,8 @@ enum layers {
   _FUNCTION
 };
 
-#define MLOSPC MO(_LOWER)
-#define MRASPC MO(_RAISE)
+#define LOWER MO(_LOWER)
+#define RAISE MO(_RAISE)
 #define MFUNCT MO(_FUNCTION)
 #define CTRESC LCTL_T(KC_ESC)
 #define ALGSPC ALGR_T(KC_SPC)
@@ -53,7 +53,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   { KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,   KC_T,   RGB_HUD, RGB_MOD, RGB_HUI,  KC_Y,   KC_U,   KC_I,    KC_O,    KC_P,    KC_QUOT },
   { CTRESC,  KC_A,    KC_S,    KC_D,    KC_F,   KC_G,   KC_HOME, KC_DEL,  KC_PGUP,  KC_H,   KC_J,   KC_K,    KC_L,    KC_SCLN, KC_ENT  },
   { KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,   KC_B,   KC_END,  KC_INS,  KC_PGDN,  KC_N,   KC_M,   KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT },
-  { KC_LCTL, KC_LALT, KC_LGUI, MFUNCT,  MLOSPC, CMDSPC, KC_SPC,  KC_SPC,  KC_SPC,   ALGSPC, MRASPC, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT },
+  { KC_LCTL, KC_LALT, KC_LGUI, MFUNCT,  LOWER,  CMDSPC, KC_SPC,  KC_SPC,  KC_SPC,   ALGSPC, RAISE,  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT },
  },
 
 /* COLEMAK
@@ -75,7 +75,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   { KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,   KC_G,   RGB_HUD, RGB_MOD, RGB_HUI,  KC_J,   KC_L,   KC_U,    KC_Y,    KC_SCLN, KC_QUOT },
   { CTRESC,  KC_A,    KC_R,    KC_S,    KC_T,   KC_D,   KC_HOME, KC_DEL,  KC_PGUP,  KC_H,   KC_N,   KC_E,    KC_I,    KC_O,    KC_ENT  },
   { KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,   KC_B,   KC_END,  KC_INS,  KC_PGDN,  KC_K,   KC_M,   KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT },
-  { KC_LCTL, KC_LALT, KC_LGUI, MFUNCT,  MLOSPC, CMDSPC, KC_BTN1, KC_BTN2, KC_BTN2,  ALGSPC, MRASPC, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT },
+  { KC_LCTL, KC_LALT, KC_LGUI, MFUNCT,  LOWER,  CMDSPC, KC_BTN1, KC_BTN2, KC_BTN2,  ALGSPC, RAISE,  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT },
  },
 
 /* LOWER
@@ -148,8 +148,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 const uint16_t PROGMEM fn_actions[] = {
 };
 
-const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
-{
+const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt) {
   // MACRODOWN only works in this function
       switch(id) {
         case 0:
