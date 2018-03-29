@@ -21,4 +21,6 @@
 
 // place overrides here
 
+#define RGBLIGHT_EFFECT_SNAKE_LENGTH 3
+
 #endif

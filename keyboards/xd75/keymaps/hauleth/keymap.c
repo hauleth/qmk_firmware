@@ -28,8 +28,8 @@ enum layers {
 #define LOWER MO(_LOWER)
 #define RAISE MO(_RAISE)
 #define MFUNCT MO(_FUNCTION)
-#define CTRESC LCTL_T(KC_ESC)
-#define ALGSPC ALGR_T(KC_SPC)
+#define CTLESC LCTL_T(KC_ESC)
+#define ALTSPC RALT_T(KC_SPC)
 #define CMDSPC GUI_T(KC_SPC)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -40,20 +40,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+-----------------|
  * | TAB    | Q      | W      | E      | R      | T      | RGB HD | RGB MO | RGB HI | Y      | U      | I      | O      | P      | '      |
  * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+-----------------+--------|
- * | CTRESC | A      | S      | D      | F      | G      | HOME   | DEL    | PG UP  | H      | J      | K      | L      | ;      | ENTER  |
+ * | CTLESC | A      | S      | D      | F      | G      | HOME   | DEL    | PG UP  | H      | J      | K      | L      | ;      | ENTER  |
  * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------------------------+--------|
  * | LSHIFT | Z      | X      | C      | V      | B      | END    | INS    | PG DN  | N      | M      | ,      | .      | /      | RSHIFT |
  * |--------+--------+--------+--------+--------+-----------------+--------+--------+--------+--------+-----------------+--------+--------|
- * | LCTRL  | LALT   | LGUI   | FN     | LOWSPC | CMDSPC | SPC    | SPC    | SPC    | ALGSPC | RAISPC | LEFT   | DOWN   | UP     | RIGHT  |
+ * | LCTRL  | LALT   | LGUI   | FN     | LOWER  | CMDSPC | SPC    | SPC    | SPC    | ALTSPC | RAISE  | LEFT   | DOWN   | UP     | RIGHT  |
  * '--------------------------------------------------------------------------------------------------------------------------------------'
  */
 
  [_QWERTY] = { /* QWERTY */
   { KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,   KC_5,   RGB_VAD, RGB_TOG, RGB_VAI,  KC_6,   KC_7,   KC_8,    KC_9,    KC_0,    KC_BSPC },
   { KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,   KC_T,   RGB_HUD, RGB_MOD, RGB_HUI,  KC_Y,   KC_U,   KC_I,    KC_O,    KC_P,    KC_QUOT },
-  { CTRESC,  KC_A,    KC_S,    KC_D,    KC_F,   KC_G,   KC_HOME, KC_DEL,  KC_PGUP,  KC_H,   KC_J,   KC_K,    KC_L,    KC_SCLN, KC_ENT  },
+  { CTLESC,  KC_A,    KC_S,    KC_D,    KC_F,   KC_G,   KC_HOME, KC_DEL,  KC_PGUP,  KC_H,   KC_J,   KC_K,    KC_L,    KC_SCLN, KC_ENT  },
   { KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,   KC_B,   KC_END,  KC_INS,  KC_PGDN,  KC_N,   KC_M,   KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT },
-  { KC_LCTL, KC_LALT, KC_LGUI, MFUNCT,  LOWER,  CMDSPC, KC_SPC,  KC_SPC,  KC_SPC,   ALGSPC, RAISE,  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT },
+  { KC_LCTL, KC_LALT, KC_LGUI, MFUNCT,  LOWER,  CMDSPC, KC_SPC,  KC_SPC,  KC_SPC,   ALTSPC, RAISE,  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT },
  },
 
 /* COLEMAK
@@ -62,25 +62,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+-----------------|
  * | TAB    | Q      | W      | F      | P      | G      | RGB HD | RGB MO | RGB HI | J      | L      | U      | Y      | ;      | '      |
  * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+-----------------+--------|
- * | CTRESC | A      | R      | S      | T      | D      | HOME   | DEL    | PG UP  | H      | N      | E      | I      | O      | ENTER  |
+ * | CTLESC | A      | R      | S      | T      | D      | HOME   | DEL    | PG UP  | H      | N      | E      | I      | O      | ENTER  |
  * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------------------------+--------|
  * | LSHIFT | Z      | X      | C      | V      | B      | END    | INS    | PG DN  | K      | M      | ,      | .      | /      | RSHIFT |
  * |--------+--------+--------+--------+--------+-----------------+--------+--------+--------+--------+-----------------+--------+--------|
- * | LCTRL  | LALT   | LGUI   | FN     | LOWSPC | CMDSPC | MS B1  | MS B2  | MS B3  | ALGSPC | RAISPC | LEFT   | DOWN   | UP     | RIGHT  |
+ * | LCTRL  | LALT   | LGUI   | FN     | LOWER  | CMDSPC | MS B1  | MS B2  | MS B3  | ALTSPC | RAISE  | LEFT   | DOWN   | UP     | RIGHT  |
  * '--------------------------------------------------------------------------------------------------------------------------------------'
  */
 
  [_COLEMAK] = { /* COLEMAK */
   { KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,   KC_5,   RGB_VAD, RGB_TOG, RGB_VAI,  KC_6,   KC_7,   KC_8,    KC_9,    KC_0,    KC_BSPC },
   { KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,   KC_G,   RGB_HUD, RGB_MOD, RGB_HUI,  KC_J,   KC_L,   KC_U,    KC_Y,    KC_SCLN, KC_QUOT },
-  { CTRESC,  KC_A,    KC_R,    KC_S,    KC_T,   KC_D,   KC_HOME, KC_DEL,  KC_PGUP,  KC_H,   KC_N,   KC_E,    KC_I,    KC_O,    KC_ENT  },
+  { CTLESC,  KC_A,    KC_R,    KC_S,    KC_T,   KC_D,   KC_HOME, KC_DEL,  KC_PGUP,  KC_H,   KC_N,   KC_E,    KC_I,    KC_O,    KC_ENT  },
   { KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,   KC_B,   KC_END,  KC_INS,  KC_PGDN,  KC_K,   KC_M,   KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT },
-  { KC_LCTL, KC_LALT, KC_LGUI, MFUNCT,  LOWER,  CMDSPC, KC_BTN1, KC_BTN2, KC_BTN2,  ALGSPC, RAISE,  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT },
+  { KC_LCTL, KC_LALT, KC_LGUI, MFUNCT,  LOWER,  CMDSPC, KC_BTN1, KC_BTN2, KC_BTN2,  ALTSPC, RAISE,  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT },
  },
 
 /* LOWER
  * .--------------------------------------------------------------------------------------------------------------------------------------.
- * |        |        |        |        |        |        |        |        |        |        |        |        | -      | =      | F12    |
+ * |        |        |        |        |        |        |        | BL TOG |        |        |        |        | -      | =      | F12    |
  * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
  * |        |        |        |        |        |        | RGB SD |        | RGB SI |        |        |        | [      | ]      | \      |
  * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
@@ -93,7 +93,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
  [_LOWER] = { /* LOWER */
-  { _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_MINS, KC_EQL,  KC_DEL  },
+  { _______, _______, _______, _______, _______, _______, BL_DEC , BL_TOGG, BL_INC , _______, _______, _______, KC_MINS, KC_EQL,  KC_DEL  },
   { _______, _______, _______, _______, _______, _______, RGB_SAD, _______, RGB_SAI, _______, _______, _______, KC_LBRC, KC_RBRC, KC_BSLS },
   { _______, _______, _______, _______, _______, _______, RGB_M_P, RGB_M_B, RGB_M_R, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, _______ },
   { _______, _______, _______, _______, _______, _______, RGB_M_SW,RGB_M_SN,RGB_M_K, _______, _______, _______, _______, _______, _______ },
