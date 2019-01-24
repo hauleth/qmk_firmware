@@ -49,11 +49,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
  [_QWERTY] = { /* QWERTY */
-  { KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,   KC_5,   RGB_VAD, RGB_TOG, RGB_VAI,  KC_6,   KC_7,   KC_8,    KC_9,    KC_0,    KC_BSPC },
-  { KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,   KC_T,   RGB_HUD, RGB_MOD, RGB_HUI,  KC_Y,   KC_U,   KC_I,    KC_O,    KC_P,    KC_QUOT },
-  { CTLESC,  KC_A,    KC_S,    KC_D,    KC_F,   KC_G,   KC_HOME, KC_DEL,  KC_PGUP,  KC_H,   KC_J,   KC_K,    KC_L,    KC_SCLN, KC_ENT  },
-  { KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,   KC_B,   KC_END,  KC_INS,  KC_PGDN,  KC_N,   KC_M,   KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT },
-  { KC_LCTL, KC_LALT, KC_LGUI, MFUNCT,  LOWER,  CMDSPC, KC_SPC,  KC_SPC,  KC_SPC,   ALTSPC, RAISE,  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT },
+  { KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,   KC_5,   KC_HOME,  KC_PGUP, KC_INS,   KC_6,   KC_7,   KC_8,    KC_9,    KC_0,    KC_BSPC },
+  { KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,   KC_T,   KC_END,   KC_PGDN, KC_DEL,   KC_Y,   KC_U,   KC_I,    KC_O,    KC_P,    KC_QUOT },
+  { CTLESC,  KC_A,    KC_S,    KC_D,    KC_F,   KC_G,   RGB_RMOD, RGB_TOG, RGB_MOD,  KC_H,   KC_J,   KC_K,    KC_L,    KC_SCLN, KC_ENT  },
+  { KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,   KC_B,   RGB_HUD,  KC_UP,   RGB_HUI,  KC_N,   KC_M,   KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT },
+  { KC_LCTL, KC_HYPR, KC_LALT, MFUNCT,  LOWER,  CMDSPC, KC_LEFT,  KC_DOWN, KC_RIGHT, ALTSPC, RAISE,  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT },
  },
 
 /* COLEMAK
@@ -71,11 +71,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
  [_COLEMAK] = { /* COLEMAK */
-  { KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,   KC_5,   RGB_VAD, RGB_TOG, RGB_VAI,  KC_6,   KC_7,   KC_8,    KC_9,    KC_0,    KC_BSPC },
-  { KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,   KC_G,   RGB_HUD, RGB_MOD, RGB_HUI,  KC_J,   KC_L,   KC_U,    KC_Y,    KC_SCLN, KC_QUOT },
-  { CTLESC,  KC_A,    KC_R,    KC_S,    KC_T,   KC_D,   KC_HOME, KC_DEL,  KC_PGUP,  KC_H,   KC_N,   KC_E,    KC_I,    KC_O,    KC_ENT  },
-  { KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,   KC_B,   KC_END,  KC_INS,  KC_PGDN,  KC_K,   KC_M,   KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT },
-  { KC_LCTL, KC_LALT, KC_LGUI, MFUNCT,  LOWER,  CMDSPC, KC_BTN1, KC_BTN2, KC_BTN2,  ALTSPC, RAISE,  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT },
+  { KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,   KC_5,   KC_HOME,  KC_PGUP, KC_INS,   KC_6,   KC_7,   KC_8,    KC_9,    KC_0,    KC_BSPC },
+  { KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,   KC_G,   KC_END,   KC_PGDN, KC_DEL,   KC_J,   KC_L,   KC_U,    KC_Y,    KC_SCLN, KC_QUOT },
+  { CTLESC,  KC_A,    KC_R,    KC_S,    KC_T,   KC_D,   RGB_RMOD, RGB_TOG, RGB_MOD,  KC_H,   KC_N,   KC_E,    KC_I,    KC_O,    KC_ENT  },
+  { KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,   KC_B,   RGB_HUD,  KC_UP,   RGB_HUI,  KC_K,   KC_M,   KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT },
+  { KC_LCTL, KC_HYPR, KC_LALT, MFUNCT,  LOWER,  CMDSPC, KC_LEFT,  KC_DOWN, KC_RIGHT, ALTSPC, RAISE,  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT },
  },
 
 /* LOWER
@@ -94,10 +94,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
  [_LOWER] = { /* LOWER */
   { _______, _______, _______, _______, _______, _______, BL_DEC , BL_TOGG, BL_INC , _______, _______, _______, KC_MINS, KC_EQL,  KC_DEL  },
-  { _______, _______, _______, _______, _______, _______, RGB_SAD, _______, RGB_SAI, _______, _______, _______, KC_LBRC, KC_RBRC, KC_BSLS },
-  { _______, _______, _______, _______, _______, _______, RGB_M_P, RGB_M_B, RGB_M_R, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, _______ },
-  { _______, _______, _______, _______, _______, _______, RGB_M_SW,RGB_M_SN,RGB_M_K, _______, _______, _______, _______, _______, _______ },
-  { _______, _______, _______, _______, _______, _______, RGB_M_X, RGB_M_G, _______, _______, _______, _______, _______, _______, _______ },
+  { _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_LBRC, KC_RBRC, KC_BSLS },
+  { _______, _______, _______, _______, _______, _______, RGB_VAD, _______, RGB_VAI, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, _______ },
+  { _______, KC_GRV,  _______, _______, _______, _______, RGB_SAD, _______, RGB_SAI, _______, _______, _______, _______, _______, _______ },
+  { _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______ },
  },
 
 /* RAISE
@@ -118,7 +118,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   { _______, _______, _______, _______, _______, _______, KC_NLCK, KC_SLSH, KC_ASTR, _______, _______, _______, KC_MINS, KC_EQL,  KC_DEL  },
   { _______, _______, _______, _______, _______, _______, KC_P7,   KC_P8,   KC_P9,   KC_MINS, _______, _______, KC_LBRC, KC_RBRC, KC_BSLS },
   { _______, _______, _______, _______, _______, _______, KC_P6,   KC_P5,   KC_P4,   KC_PLUS, _______, _______, _______, _______, _______ },
-  { _______, _______, _______, _______, _______, _______, KC_P3,   KC_P2,   KC_P1,   _______, _______, _______, _______, _______, _______ },
+  { _______, KC_TILD, _______, _______, _______, _______, KC_P3,   KC_P2,   KC_P1,   _______, _______, _______, _______, _______, _______ },
   { _______, _______, _______, _______, _______, _______, KC_KP_0, _______, KC_PDOT, KC_PENT, _______, _______, _______, _______, _______ },
  },
 
